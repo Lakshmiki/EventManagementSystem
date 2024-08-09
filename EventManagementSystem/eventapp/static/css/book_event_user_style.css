@@ -1,0 +1,19 @@
+body {
+
+}
+
+.booking-form {
+  max-width: 500px;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.booking-form h2 {
+  font-weight: bold;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}

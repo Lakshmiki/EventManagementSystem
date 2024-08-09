@@ -1,0 +1,27 @@
+body {
+
+}
+.navbar {
+    width: 100%;
+    background-color: #00bfff;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.booking-form {
+  max-width: 500px;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.booking-form h2 {
+  font-weight: bold;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}

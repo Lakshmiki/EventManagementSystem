@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/use_and_vendor_dashboard_style.css' %}">
+
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: 'PT Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+
+
+
+
+.header-image {
+    position: relative;
+    height: 60vh;
+    background: url('/image.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.header-image .container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar-brand {
+    font-family: 'Cursive', sans-serif;
+}
+
+.nav-link {
+    color: #333;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+.navbar-text {
+    font-size: 0.9rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+.services-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.services-col {
+    height: 22rem;
+    color: rgb(236, 68, 90);
+    background: url("back-2.png");
+    background-color: lightgray;
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+    flex: 1 1 25rem;
+    padding: 1.2rem;
+    margin: 1.5rem;
+}
+
+.services-col i {
+    padding: 2.2rem;
+    border: none;
+    background: aliceblue;
+    border-radius: 5rem;
+    font-size: 2.8rem;
+}
+
+.services-col h2 {
+    padding: 1rem 0;
+    font-size: 2rem;
+    color: #000;
+}
+
+.services-col p {
+    font-size: 1.2rem;
+    color: #000;
+}
+
+@media (max-width:767px) {
+    .service {
+        margin-bottom: 30rem;
+    }
+}
+.budget .budget-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.budget .budget-list .budget-box {
+    flex: 1 1 50rem;
+    margin: 1rem;
+    position: relative;
+    border-radius: .6rem;
+    overflow: hidden;
+    height: 20rem;
+}
+
+.budget .budget-list .budget-box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.budget .budget-list .budget-box .budget-info {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    background: rgba(46, 39, 40, 0.5);
+    transform: scale(1.3);
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.budget .budget-list .budget-box:hover .budget-info {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.budget .budget-list .budget-box .budget-info h2 {
+    letter-spacing: .1rem;
+    font-size: 3rem;
+}
+
+.budget .budget-list .budget-box .budget-info p {
+    letter-spacing: .1rem;
+    font-size: 2rem;
+}
+
+.budget .budget-list .budget-box .budget-info .btn {
+    width: 12rem;
+    height: 4rem;
+    margin: 1rem;
+    padding: .6rem;
+    letter-spacing: .1rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    background: rgb(236, 68, 90);
+    border: none;
+    border-radius: .5rem;
+}
+    footer {
+    padding: 5rem 5%;
+}
+
+#contact {
+    background-color: var(--clr2);
+}
+
+.container {
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+}
+
+.f-container h2 {
+    font-size: 2.5rem;
+    color: var(--clr3);
+    padding: 1rem 0;
+}
+
+.f-container a {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--clr3);
+    padding: 1rem 0;
+    display: block;
+}
+
+.f-container a:hover {
+    transform: translateX(.5rem);
+    transition: .5s ease;
+}
+
+.f-container i {
+    padding-right: .5rem;
+    color: var(--clr1);
+}
+
+.f-container p {
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--clr1);
+}
+
+.f-container input {
+    width: 90%;
+    padding: 1rem;
+    background: #eee;
+    border: .2rem solid var(--clr1);
+}
+
+.f-container .btn {
+    background: var(--clr1);
+    color: #fff;
+    cursor: pointer;
+    margin-top: 2rem;
+    border-radius: .2rem;
+}
+
+.f-container .social i {
+    margin-top: 1rem;
+    font-size: 2rem;
+    background: var(--clr3);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.f-container .social i:hover {
+    transform: rotate(360deg);
+    transition: 1s ease;
+}
+
+.footer-content {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-content h1 {
+    font-size: 3rem;
+    color: #aaa;
+}
+
+.copyright {
+    padding: 2rem 0;
+    text-align: center;
+    background: var(--clr1);
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.copyright p {
+    font-size: 1.2rem;
+    color: #aaa;
+}
+
+</style>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-info p-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Ever After Events</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto ">
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="http://127.0.0.1:8000/eventapp/user_login/">users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="http://127.0.0.1:8000/eventapp/vendor_dashboard/">vendors</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto d-none d-lg-inline-flex">
+            <li class="nav-item mx-2">
+              <a class="nav-link text-dark h5" href="" target="blank"><i class="fab fa-google-plus-square"></i></a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link text-dark h5" href="" target="blank"><i class="fab fa-twitter"></i></a>
+            </li>
+               <li class="nav-item mx-2">
+              <a class="nav-link text-dark h5" href="" target="blank"><i class="fab fa-facebook-square"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'image/eventpic1.jpg'%}" height="700px" width="700px" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5> Planning and Organization</h5>
+        <p>This first step is to lay the groundwork for the event. It is where organizers ideate and develop everything from the initial concept to selecting a date.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'image/img_2.png'%}"height="700px" width="700px" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Budgeting and Financial Management</h5>
+        <p>Intelligent and proactive analysis here prevents overspending and ensures the event’s profitability..</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'image/img_1.png'%}" height="700px" width="700px" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Marketing and Promotion</h5>
+        <p>Promoting an event is a vital stage of the planning process..</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<br><br>
+<section class="service" id="service">
+        <div class="title">
+            <h1><span>S</span>ervice</h1>
+        </div>
+        <div class="services-row">
+            <div class="services-col">
+                <i class="fas fa-book-open"></i>
+                <h2>invitation</h2>
+                <p>Event invitations inform people of events they may be interested in attending.</p>
+            </div>
+            <div class="services-col">
+                <i class="fas fa-camera"></i>
+                <h2>Photography & Video</h2>
+                <p>We offer our photography and videography services to businesses and the general public for private events, parties, fund raisers, school events, charity events, sporting events and many more. </p>
+            </div>
+            <div class="services-col">
+                <i class="fas fa-brush"></i>
+                <h2>Beauty & Makeup</h2>
+                <p>cosmetics can help to improve our mood, enhance our appearance and boost our self-esteem.</p>
+            </div>
+            <div class="services-col">
+                <i class="fab fa-pagelines"></i>
+                <h2>Wedding flowers</h2>
+                <p>The flowers you choose for your day play a huge role in the overall look of your wedding day..</p>
+            </div>
+            <div class="services-col">
+                <i class="fas fa-birthday-cake"></i>
+                <h2>wedding cake</h2>
+                <p>It is thought that wedding cakes were originally a symbol of prosperity, luck and fertility..</p>
+            </div>
+            <div class="services-col">
+                <i class="fas fa-music"></i>
+                <h2>music band</h2>
+                <p>The Event Band is a custom made act that allows you to make your own rules and set the tone by choosing a tailor-made line up of the best performers and musicians to create the exact sound and experience you're looking for..</p>
+            </div>
+            <div class="services-col">
+                <i class="fas fa-utensils"></i>
+                <h2>Catering</h2>
+                <p>a catered event or place to stay is one where food and drink is provided.</p>
+            </div>
+            <div class="services-col">
+                <i class="fas fa-ring"></i>
+                <h2>Jewellery</h2>
+                <p>Jewelry helps in enhancing one's beauty. It also symbolizes wealth, power, and status. For some, jewelry is a form of art for self and creative expression..</p>
+            </div>
+        </div>
+    </section>
+<br><br>
+ <section class="budget" id="budget">
+        <div class="title">
+            <h1><span>V</span>enue</h1>
+        </div>
+        <div class="budget-list">
+            <div class="budget-box">
+                <img src="{% static 'image/budget1.jpg' %}" alt="img">
+                <div class="budget-info">
+                    <h2>Goa</h2>
+                    <p>Azaya Beach Resort, Goa</p>
+                    <button class="btn">More Info</button>
+                </div>
+            </div>
+            <div class="budget-box">
+                <img src="{% static 'image/budget2.jpg' %}" alt="img">
+                <div class="budget-info">
+                    <h2>Jaipur</h2>
+                    <p>The Raj Palace</p>
+                    <button class="btn">More Info</button>
+                </div>
+            </div>
+             <div class="budget-box">
+                <img src="{% static 'image/budget3.jpg' %}" alt="img">
+                <div class="budget-info">
+                    <h2>Udaipur</h2>
+                    <p>Taj Aravalli Resort and Spa</p>
+                    <button class="btn">More Info</button>
+                </div>
+            </div>
+            <div class="budget-box">
+                <img src="{% static 'image/budget4.jpg' %}" alt="img">
+                <div class="budget-info">
+                    <h2>Thailand</h2>
+                    <p>Prince Palace Hotel</p>
+                    <button class="btn">More Info</button>
+                </div>
+            </div>
+            <div class="budget-box">
+                <img src="{% static 'image/budget5.jpg' %}" alt="img">
+                <div class="budget-info">
+                    <h2>Mumbai</h2>
+                    <p>Grand Banquet, Chembur</p>
+                    <button class="btn">More Info</button>
+                </div>
+            </div>
+        </div>
+ </section>
+<!--Footer section-->
+<footer id="contact">
+        <div class="container">
+            <div class="f-container">
+                <h2>Ever After Events - Your Personal Event Planner</h2><br>
+                <p>Plan your Events with Us Ever After events is an Indian Event Planning Website </p>
+
+                <div class="social">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-pinterest"></i>
+                </div>
+            </div>
+            <div class="f-container">
+                <h2>Our Location</h2>
+                <a href="#"><i class="fas fa-angle-right"></i>Anand</a>
+                <a href="#"><i class="fas fa-angle-right"></i>Vadodara</a>
+                <a href="#"><i class="fas fa-angle-right"></i>Mumbai</a>
+                <a href="#"><i class=" fas fa-angle-right "></i>Ahemdabad</a>
+                    <a href="# "><i class="fas fa-angle-right "></i>Surat</a>
+                </div>
+
+        </div>
+        </footer>
+        <div class="copyright ">
+            <p>Copyright ©2022 All Rights Reserved</p>
+        </div>
+</body>
+</html>

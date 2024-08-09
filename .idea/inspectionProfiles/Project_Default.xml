@@ -1,0 +1,20 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="ecommerce.sellerapp.views.ecommerceapp" />
+          <option value="ecommerce.sellerapp.views.sellerproductupload" />
+          <option value="ecommerce.sellerapp.views.sellerproductproduct" />
+          <option value="ecommerce.ecommerceapp.views.userlogin" />
+          <option value="ecommerce.sellerapp.views.seller_profile" />
+          <option value="ecommerce.sellerapp.urls.seller_profile" />
+          <option value="ecommerce.sellerapp.urls.delete_seller_product" />
+          <option value="ecommerce.sellerapp.urls.delete_seller_profile" />
+          <option value="library_management.libapp.views.studentreg" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

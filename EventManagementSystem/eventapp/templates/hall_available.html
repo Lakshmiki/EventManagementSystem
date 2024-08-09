@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Available halls</h1>
+<ul>
+    {% for hall in available_hall %}
+    <li>{{hall.name}}-capacity{{hall.capacity}}</li>
+    {% empty %}
+    <li>No halls available at the moment</li>
+
+    {% endfor %}
+</ul>
+
+</body>
+</html>
